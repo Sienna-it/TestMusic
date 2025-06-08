@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>BeatCraft Pro</title>
+  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>BeatCraft Pro</h1>
+      <p class="subtitle">
+        Create your own music with this enhanced browser-based music maker.
+        Play instruments, record beats, and compose your masterpiece!
+      </p>
+    </header>
+
+    <div class="main-content">
+      <!-- Controls & Instruments Panel -->
+      <div class="panel">
+        <h2 class="panel-title"><i class="fas fa-sliders-h"></i> Controls & Instruments</h2>
+        <div class="instrument-selector">
+          <div class="instrument active" data-instrument="piano"><i class="fas fa-music"></i><span>Piano</span></div>
+          <div class="instrument" data-instrument="guitar"><i class="fas fa-guitar"></i><span>Guitar</span></div>
+          <div class="instrument" data-instrument="synth"><i class="fas fa-wave-square"></i><span>Synth</span></div>
+          <div class="instrument" data-instrument="drums"><i class="fas fa-drum"></i><span>Drums</span></div>
+          <div class="instrument" data-instrument="bass"><i class="fas fa-guitar"></i><span>Bass</span></div>
+          <div class="instrument" data-instrument="strings"><i class="fas fa-violin"></i><span>Strings</span></div>
+        </div>
+
+        <h3 class="panel-title"><i class="fas fa-keyboard"></i> Playable Keyboard</h3>
+        
+        <!-- Octave Navigation -->
+        <div class="octave-navigation">
+          <button class="octave-nav-btn active" data-octave="3">Octave 3</button>
+          <button class="octave-nav-btn" data-octave="4">Octave 4</button>
+          <button class="octave-nav-btn" data-octave="5">Octave 5</button>
+        </div>
+
+        <!-- Mobile Keyboard Container -->
+        <div class="keyboard-container" id="keyboardContainer">
+          <div class="keyboard-scroll-hint">
+            <i class="fas fa-hand-paper"></i> Drag to scroll keyboard
+          </div>
+          
+          <!-- Octave 3 -->
+          <div class="keyboard-octave active" data-octave="3">
+            <div class="keyboard-keys">
+              <div class="white-keys">
+                <div class="white-key" data-note="C3"><div class="key-label">C3</div></div>
+                <div class="white-key" data-note="D3"><div class="key-label">D3</div></div>
+                <div class="white-key" data-note="E3"><div class="key-label">E3</div></div>
+                <div class="white-key" data-note="F3"><div class="key-label">F3</div></div>
+                <div class="white-key" data-note="G3"><div class="key-label">G3</div></div>
+                <div class="white-key" data-note="A3"><div class="key-label">A3</div></div>
+                <div class="white-key" data-note="B3"><div class="key-label">B3</div></div>
+              </div>
+              <div class="black-keys">
+                <div class="black-key" data-note="C#3" style="left:30px"><div class="key-label">C#3</div></div>
+                <div class="black-key" data-note="D#3" style="left:90px"><div class="key-label">D#3</div></div>
+                <div class="black-key" data-note="F#3" style="left:210px"><div class="key-label">F#3</div></div>
+                <div class="black-key" data-note="G#3" style="left:270px"><div class="key-label">G#3</div></div>
+                <div class="black-key" data-note="A#3" style="left:330px"><div class="key-label">A#3</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Octave 4 -->
+          <div class="keyboard-octave" data-octave="4">
+            <div class="keyboard-keys">
+              <div class="white-keys">
+                <div class="white-key" data-note="C4"><div class="key-label">C4</div></div>
+                <div class="white-key" data-note="D4"><div class="key-label">D4</div></div>
+                <div class="white-key" data-note="E4"><div class="key-label">E4</div></div>
+                <div class="white-key" data-note="F4"><div class="key-label">F4</div></div>
+                <div class="white-key" data-note="G4"><div class="key-label">G4</div></div>
+                <div class="white-key" data-note="A4"><div class="key-label">A4</div></div>
+                <div class="white-key" data-note="B4"><div class="key-label">B4</div></div>
+              </div>
+              <div class="black-keys">
+                <div class="black-key" data-note="C#4" style="left:30px"><div class="key-label">C#4</div></div>
+                <div class="black-key" data-note="D#4" style="left:90px"><div class="key-label">D#4</div></div>
+                <div class="black-key" data-note="F#4" style="left:210px"><div class="key-label">F#4</div></div>
+                <div class="black-key" data-note="G#4" style="left:270px"><div class="key-label">G#4</div></div>
+                <div class="black-key" data-note="A#4" style="left:330px"><div class="key-label">A#4</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Octave 5 -->
+          <div class="keyboard-octave" data-octave="5">
+            <div class="keyboard-keys">
+              <div class="white-keys">
+                <div class="white-key" data-note="C5"><div class="key-label">C5</div></div>
+                <div class="white-key" data-note="D5"><div class="key-label">D5</div></div>
+                <div class="white-key" data-note="E5"><div class="key-label">E5</div></div>
+                <div class="white-key" data-note="F5"><div class="key-label">F5</div></div>
+                <div class="white-key" data-note="G5"><div class="key-label">G5</div></div>
+                <div class="white-key" data-note="A5"><div class="key-label">A5</div></div>
+                <div class="white-key" data-note="B5"><div class="key-label">B5</div></div>
+              </div>
+              <div class="black-keys">
+                <div class="black-key" data-note="C#5" style="left:30px"><div class="key-label">C#5</div></div>
+                <div class="black-key" data-note="D#5" style="left:90px"><div class="key-label">D#5</div></div>
+                <div class="black-key" data-note="F#5" style="left:210px"><div class="key-label">F#5</div></div>
+                <div class="black-key" data-note="G#5" style="left:270px"><div class="key-label">G#5</div></div>
+                <div class="black-key" data-note="A#5" style="left:330px"><div class="key-label">A#5</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="keyboard-guide">
+          <div class="guide-title">Keyboard Shortcuts (Current Octave):</div>
+          <div class="key-mappings">
+            <div class="key-map"><span class="highlight">Z</span> - C</div>
+            <div class="key-map"><span class="highlight">S</span> - C#</div>
+            <div class="key-map"><span class="highlight">X</span> - D</div>
+            <div class="key-map"><span class="highlight">D</span> - D#</div>
+            <div class="key-map"><span class="highlight">C</span> - E</div>
+            <div class="key-map"><span class="highlight">V</span> - F</div>
+            <div class="key-map"><span class="highlight">G</span> - F#</div>
+            <div class="key-map"><span class="highlight">B</span> - G</div>
+            <div class="key-map"><span class="highlight">H</span> - G#</div>
+            <div class="key-map"><span class="highlight">N</span> - A</div>
+            <div class="key-map"><span class="highlight">J</span> - A#</div>
+            <div class="key-map"><span class="highlight">M</span> - B</div>
+          </div>
+        </div>
+
+        <h3 class="panel-title"><i class="fas fa-drum"></i> Beat Sequencer</h3>
+        <div class="beat-grid">
+          <div class="beat-cell drum" data-beat="0"></div>
+          <div class="beat-cell" data-beat="1"></div>
+          <div class="beat-cell snare" data-beat="2"></div>
+          <div class="beat-cell" data-beat="3"></div>
+          <div class="beat-cell hihat" data-beat="4"></div>
+          <div class="beat-cell" data-beat="5"></div>
+          <div class="beat-cell drum" data-beat="6"></div>
+          <div class="beat-cell" data-beat="7"></div>
+        </div>
+        <div class="controls">
+          <button class="btn btn-play" id="playBtn"><i class="fas fa-play"></i> Play</button>
+          <button class="btn btn-stop" id="stopBtn"><i class="fas fa-stop"></i> Stop</button>
+          <button class="btn btn-record" id="recordBtn"><i class="fas fa-record-vinyl"></i> Record</button>
+        </div>
+        <div class="recording-indicator" id="recIndicator">
+          <div class="pulse"></div><div>Recording in progress...</div>
+        </div>
+      </div>
+
+      <!-- Audio Visualizer Panel -->
+      <div class="panel">
+        <h2 class="panel-title"><i class="fas fa-waveform"></i> Audio Visualizer</h2>
+        <div class="visualizer"><div class="visualizer-bars" id="visualizer">
+          <!-- 12 bars -->
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div></div>
+        <div class="control-group">
+          <div class="control-title">Volume</div>
+          <input type="range" min="0" max="100" value="80" class="slider" id="volumeSlider">
+        </div>
+        <div class="control-group">
+          <div class="control-title">Tempo: <span id="tempoValue">120</span> BPM</div>
+          <input type="range" min="60" max="180" value="120" class="slider" id="tempoSlider">
+        </div>
+        <div class="control-group">
+          <div class="control-title">Reverb</div>
+          <input type="range" min="0" max="100" value="30" class="slider" id="reverbSlider">
+        </div>
+        <div class="track-info">
+          <div class="track-title">Current Track: <span id="trackTitle">Sunset Melody</span></div>
+          <div class="composer"><i class="fas fa-user"></i> Composer:
+            <input type="text" id="composerName" value="Your Name">
+          </div>
+        </div>
+        <div class="controls extra">
+          <button class="btn"><i class="fas fa-save"></i> Save Project</button>
+          <button class="btn"><i class="fas fa-folder-open"></i> Load Project</button>
+          <button class="btn"><i class="fas fa-file-download"></i> Export MP3</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Made with <span class="highlight">♥</span> using Web Audio API | Mobile-optimized keyboard!</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
